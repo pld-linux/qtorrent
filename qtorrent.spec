@@ -7,7 +7,7 @@ License:	MIT
 Group:		Applications/Networking
 Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	5249c19a5d1bfec48bfb3f983a73818a
-URL:		http://thegraveyard.org/
+URL:		http://thegraveyard.org/qtorrent.php
 BuildRequires:	python-PyQt	
 Requires:	python-PyQt	
 BuildArch:	noarch
