@@ -1,12 +1,12 @@
 Summary:	A PyQt GUI for BitTorrent
 Summary(pl):	Interfejs GUI do BitTorrenta
 Name:		qtorrent
-Version:	0.9.5
-Release:	0.1
+Version:	0.9.6.1
+Release:	1
 License:	MIT
 Group:		Applications/Networking
 Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	5249c19a5d1bfec48bfb3f983a73818a
+# Source0-md5:	ee6164fb26e0400f6083516f59ea77a3
 URL:		http://thegraveyard.org/qtorrent.php
 BuildRequires:	python-PyQt
 BuildRequires:	python-devel
@@ -50,6 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE.txt MANIFEST PKG-INFO
 %attr(755,root,root) %{_bindir}/*
 %dir %{py_sitescriptdir}/pyqtorrent
-%dir %{py_sitescriptdir}/pyqtorrent/BitTorrent
+%dir %{py_sitescriptdir}/pyqtorrent/BitTornado
+%dir %{py_sitescriptdir}/pyqtorrent/BitTornado/BT1
 %{py_sitescriptdir}/pyqtorrent/*.py[co]
-%{py_sitescriptdir}/pyqtorrent/BitTorrent/*.py[co]
+%{py_sitescriptdir}/pyqtorrent/BitTornado/*.py[co]
+%{py_sitescriptdir}/pyqtorrent/BitTornado/BT1/*.py[co]
