@@ -22,9 +22,9 @@ can control things like upload speed and upload slots. A page that
 shows some statistics of all open torrents is also available.
 
 %description -l pl
-QTorrent jest klientem BitTorrenta u¿ywajacym wid¿etów Qt. Pozwala na
+QTorrent jest klientem BitTorrenta u¿ywaj±cym widgetów Qt. Pozwala na
 otwarcie kilku torrentów jednocze¶nie w jednym oknie programu. Oferuje
-³atwy podgl±d, dostêp i zarz±dzanie przez listê. Kazdy torrent ma tak¿e
+³atwy podgl±d, dostêp i zarz±dzanie przez listê. Ka¿dy torrent ma tak¿e
 w³asn± stronê przez która mo¿na kontrolowaæ szybko¶æ uploadu i sloty.
 Strona te¿ przedstawia pewne statystyki wszystkich otwartych torrentów.
 
