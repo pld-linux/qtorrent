@@ -10,6 +10,7 @@ Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
 URL:		http://thegraveyard.org/qtorrent.php
 BuildRequires:	python-PyQt
 BuildRequires:	python-devel
+%pyrequires_eq	python-libs
 Requires:	python-PyQt	
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
