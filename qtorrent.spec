@@ -2,16 +2,18 @@ Summary:	A PyQt GUI for BitTorrent
 Summary(pl):	Interfejs GUI do BitTorrenta
 Name:		qtorrent
 Version:	0.9.6.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Applications/Networking
 Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	ee6164fb26e0400f6083516f59ea77a3
 URL:		http://thegraveyard.org/qtorrent.php
+BuildRequires:	python
 BuildRequires:	python-PyQt
 BuildRequires:	python-devel
+BuildRequires:	python-modules
 %pyrequires_eq	python-libs
-Requires:	python-PyQt	
+Requires:	python-PyQt
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,6 +38,12 @@ wszystkich otwartych potoków.
 
 %build
 %{__python} setup.py build
+
+# regenerate from ui files
+cd pyqtorrent
+pyuic torrentwidget.ui > torrentwidget.py
+pyuic torrentwindow.ui > torrentwindow.py
+pyuic torrentsettings.ui > torrentsettings.py
 
 %install
 rm -rf $RPM_BUILD_ROOT
