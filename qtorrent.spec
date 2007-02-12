@@ -1,5 +1,5 @@
 Summary:	A PyQt GUI for BitTorrent
-Summary(pl):	Interfejs GUI do BitTorrenta
+Summary(pl.UTF-8):   Interfejs GUI do BitTorrenta
 Name:		qtorrent
 Version:	0.9.6.1
 Release:	2
@@ -25,13 +25,13 @@ through a list-mode. Every torrent also has it's own page where you
 can control things like upload speed and upload slots. A page that
 shows some statistics of all open torrents is also available.
 
-%description -l pl
-QTorrent jest klientem BitTorrenta u¿ywaj±cym widgetów Qt. Pozwala na
-otwarcie kilku torrentów jednocze¶nie w jednym oknie programu. Oferuje
-³atwy podgl±d, dostêp i zarz±dzanie przez listê. Ka¿dy potok
-("torrent") ma tak¿e w³asn± stronê przez która mo¿na kontrolowaæ
-szybko¶æ uploadu i sloty. Strona te¿ przedstawia pewne statystyki
-wszystkich otwartych potoków.
+%description -l pl.UTF-8
+QTorrent jest klientem BitTorrenta uÅ¼ywajÄ…cym widgetÃ³w Qt. Pozwala na
+otwarcie kilku torrentÃ³w jednoczeÅ›nie w jednym oknie programu. Oferuje
+Å‚atwy podglÄ…d, dostÄ™p i zarzÄ…dzanie przez listÄ™. KaÅ¼dy potok
+("torrent") ma takÅ¼e wÅ‚asnÄ… stronÄ™ przez ktÃ³ra moÅ¼na kontrolowaÄ‡
+szybkoÅ›Ä‡ uploadu i sloty. Strona teÅ¼ przedstawia pewne statystyki
+wszystkich otwartych potokÃ³w.
 
 %prep
 %setup -q
