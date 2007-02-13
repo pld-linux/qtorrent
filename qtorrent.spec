@@ -1,5 +1,5 @@
 Summary:	A PyQt GUI for BitTorrent
-Summary(pl.UTF-8):   Interfejs GUI do BitTorrenta
+Summary(pl.UTF-8):	Interfejs GUI do BitTorrenta
 Name:		qtorrent
 Version:	0.9.6.1
 Release:	2
