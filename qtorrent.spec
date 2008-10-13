@@ -1,3 +1,4 @@
+# TODO: py_postclean
 Summary:	A PyQt GUI for BitTorrent
 Summary(pl.UTF-8):	Interfejs GUI do BitTorrenta
 Name:		qtorrent
@@ -8,10 +9,11 @@ Group:		Applications/Networking
 Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	3342c1df915941163d0b3f7f7aec0e83
 URL:		http://thegraveyard.org/qtorrent.php
-BuildRequires:	python
+BuildRequires:	python >= 1:2.5
 BuildRequires:	python-PyQt
-BuildRequires:	python-devel
-BuildRequires:	python-modules
+BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-modules >= 1:2.5
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
 Requires:	python-PyQt
 BuildArch:	noarch
@@ -41,6 +43,7 @@ wszystkich otwartych potoków.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__python} setup.py install \
 	--optimize=2 \
 	--root $RPM_BUILD_ROOT
