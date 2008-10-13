@@ -1,12 +1,12 @@
 Summary:	A PyQt GUI for BitTorrent
 Summary(pl.UTF-8):	Interfejs GUI do BitTorrenta
 Name:		qtorrent
-Version:	0.9.6.1
-Release:	2
+Version:	2.9.1
+Release:	1
 License:	MIT
 Group:		Applications/Networking
 Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	ee6164fb26e0400f6083516f59ea77a3
+# Source0-md5:	3342c1df915941163d0b3f7f7aec0e83
 URL:		http://thegraveyard.org/qtorrent.php
 BuildRequires:	python
 BuildRequires:	python-PyQt
@@ -39,12 +39,6 @@ wszystkich otwartych potoków.
 %build
 %{__python} setup.py build
 
-# regenerate from ui files
-cd pyqtorrent
-pyuic torrentwidget.ui > torrentwidget.py
-pyuic torrentwindow.ui > torrentwindow.py
-pyuic torrentsettings.ui > torrentsettings.py
-
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__python} setup.py install \
@@ -58,9 +52,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE.txt MANIFEST PKG-INFO
 %attr(755,root,root) %{_bindir}/*
-%dir %{py_sitescriptdir}/pyqtorrent
-%dir %{py_sitescriptdir}/pyqtorrent/BitTornado
-%dir %{py_sitescriptdir}/pyqtorrent/BitTornado/BT1
-%{py_sitescriptdir}/pyqtorrent/*.py[co]
-%{py_sitescriptdir}/pyqtorrent/BitTornado/*.py[co]
-%{py_sitescriptdir}/pyqtorrent/BitTornado/BT1/*.py[co]
+%dir %{py_sitescriptdir}/pyqtorrent3
+%dir %{py_sitescriptdir}/pyqtorrent3/BitTorrent
+%dir %{py_sitescriptdir}/pyqtorrent3/QtGui
+%{py_sitescriptdir}/pyqtorrent3/*.py[co]
+%{py_sitescriptdir}/pyqtorrent3/*.py
+%{py_sitescriptdir}/pyqtorrent3/BitTorrent/*.py[co]
+%{py_sitescriptdir}/pyqtorrent3/BitTorrent/*.py
+%{py_sitescriptdir}/pyqtorrent3/QtGui/*.py[co]
+%{py_sitescriptdir}/pyqtorrent3/QtGui/*.py
+%{py_sitescriptdir}/%{name}-%{version}-py*.egg-info
