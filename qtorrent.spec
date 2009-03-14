@@ -1,13 +1,13 @@
-# TODO: py_postclean
 Summary:	A PyQt GUI for BitTorrent
 Summary(pl.UTF-8):	Interfejs GUI do BitTorrenta
 Name:		qtorrent
-Version:	2.9.1
+Version:	2.9.3
 Release:	1
 License:	MIT
 Group:		Applications/Networking
 Source0:	http://thegraveyard.org/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	3342c1df915941163d0b3f7f7aec0e83
+# Source0-md5:	c8f516416a1582beecf5011f8157e130
+Patch0:		%{name}-setup.patch
 URL:		http://thegraveyard.org/qtorrent.php
 BuildRequires:	python >= 1:2.5
 BuildRequires:	python-PyQt
@@ -37,6 +37,7 @@ wszystkich otwartych potoków.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__python} setup.py build
@@ -48,20 +49,28 @@ rm -rf $RPM_BUILD_ROOT
 	--optimize=2 \
 	--root $RPM_BUILD_ROOT
 
+# Remove *.py files. We don't package them.
+find $RPM_BUILD_ROOT%{py_sitescriptdir}/pyqtorrent3 -type f -name '*.py' -print0 | xargs -0 rm -f
+
+# add a symlink: qtorrent.py -> qtorrent
+ln -fs %{_bindir}/qtorrent.py $RPM_BUILD_ROOT%{_bindir}/%{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc LICENSE.txt MANIFEST PKG-INFO
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/qtorrent.py
+%attr(755,root,root) %ghost %{_bindir}/qtorrent
 %dir %{py_sitescriptdir}/pyqtorrent3
 %dir %{py_sitescriptdir}/pyqtorrent3/BitTorrent
 %dir %{py_sitescriptdir}/pyqtorrent3/QtGui
+%dir %{py_sitescriptdir}/pyqtorrent3/WebGui
+%dir %{py_sitescriptdir}/pyqtorrent3/WebGui/templates
 %{py_sitescriptdir}/pyqtorrent3/*.py[co]
-%{py_sitescriptdir}/pyqtorrent3/*.py
 %{py_sitescriptdir}/pyqtorrent3/BitTorrent/*.py[co]
-%{py_sitescriptdir}/pyqtorrent3/BitTorrent/*.py
 %{py_sitescriptdir}/pyqtorrent3/QtGui/*.py[co]
-%{py_sitescriptdir}/pyqtorrent3/QtGui/*.py
+%{py_sitescriptdir}/pyqtorrent3/WebGui/*.py[co]
+%{py_sitescriptdir}/pyqtorrent3/WebGui/templates/*.html
 %{py_sitescriptdir}/%{name}-%{version}-py*.egg-info
