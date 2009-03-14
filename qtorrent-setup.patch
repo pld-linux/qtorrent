@@ -1,0 +1,12 @@
+diff -burNp qtorrent-2.9.3/setup.py qtorrent-2.9.3-dud/setup.py
+--- qtorrent-2.9.3/setup.py	2005-05-21 13:07:35.000000000 +0200
++++ qtorrent-2.9.3-dud/setup.py	2009-03-14 14:10:01.815007027 +0100
+@@ -26,7 +26,7 @@ if __name__ == '__main__' :
+           url                   = "http://thegraveyard.org/",
+           packages              = [ 'pyqtorrent3', 'pyqtorrent3.BitTorrent', 'pyqtorrent3.QtGui', 'pyqtorrent3.WebGui' ],
+           package_data		= { 'pyqtorrent3.WebGui' : ['templates/*.html'] },
+-          scripts               = [ 'qtorrent' ],
++          scripts               = [ 'qtorrent.py' ],
+           long_description      = LONG_DESCRIPTION,
+          )
+ 
